@@ -1,0 +1,56 @@
+{
+    "configurations": [
+        {
+            "name": "pt-nn-psmap-fp-ft-bert-mnli",
+            "id": "0",
+            "cwd": "NOT_SET",
+            "env": {
+                "XLA_PYTHON_CLIENT_MEM_FRACTION": "0.45",
+                "TF_CPP_MIN_LOG_LEVEL": "3",
+                "LD_LIBRARY_PATH": "",
+                "PYTHONHASHSEED": "0",
+                "PYTHONUNBUFFERED": "1",
+                "TF_CUDNN_DETERMINISTIC": "1",
+                "TF_DETERMINISTIC_OPS": "1"
+            },
+            "args": [
+                "--fairness_eval", "True",
+                "--validation_training", "True",
+                "--val_train_frac", "1",
+                "--restore_checkpoint", "True",
+                "--checkpoint_dir", "NOT_SET",
+                "--pretrained_prior", "False",
+                "--final_layer_random_init", "True",
+                "--group_dro", "True",
+                "--dataset_group_scale", "4",
+                "--empirical_fairness_prior_scale", "10",
+                "--rho_sam", "0.1",
+                "--prior_precision", "100",
+                "--num_epochs", "1",
+                "--learning_rate", "0.000005",
+                "--alpha", "1",
+                "--dataset", "mnli",
+                "--batch_size", "32",
+                "--context_batch_size", "32",
+                "--model_name", "bert-base-uncased",
+                "--method", "psmap",
+                "--reg_type", "group_dro_prior_exponential_sharpness_penalty_fixed_weights_context",
+                "--context_points", "train",
+                "--forward_points", "joint",
+                "--reg_points", "context",
+                "--optimizer_name", "adamw",
+                "--lr_schedule_name", "linear",
+                "--ood_points", "xxx",
+                "--mc_samples_reg", "1",
+                "--reg_scale", "1",
+                "--prior_mean", "0",
+                "--weight_decay", "0",
+                "--log_frequency", "1",
+                "--log_frequency_steps", "500",
+                "--save_to_wandb", "True",
+                "--wandb_project", "xxx",
+                "--wandb_account", "xxx"
+            ]
+        }
+    ]
+}

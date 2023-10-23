@@ -1,0 +1,55 @@
+{
+    "configurations": [
+        {
+            "name": "pt-nn-psmap-fp-ft-rn50-celeba",
+            "id": "0",
+            "cwd": "NOT_SET",
+            "env": {
+                "XLA_PYTHON_CLIENT_MEM_FRACTION": "0.45",
+                "TF_CPP_MIN_LOG_LEVEL": "3",
+                "LD_LIBRARY_PATH": "",
+                "PYTHONHASHSEED": "0",
+                "PYTHONUNBUFFERED": "1",
+                "TF_CUDNN_DETERMINISTIC": "1",
+                "TF_DETERMINISTIC_OPS": "1"
+            },
+            "args": [
+                "--fairness_eval", "True",
+                "--validation_training", "True",
+                "--val_train_frac", "1",
+                "--restore_checkpoint", "True",
+                "--checkpoint_dir", "NOT_SET",
+                "--pretrained_prior", "True",
+                "--final_layer_random_init", "False",
+                "--group_dro", "True",
+                "--dataset_group_scale", "10",
+                "--empirical_fairness_prior_scale", "100",
+                "--rho_sam", "0.15",
+                "--prior_precision", "500",
+                "--num_epochs", "6",
+                "--learning_rate", "0.00007",
+                "--alpha", "1",
+                "--dataset", "celeba",
+                "--batch_size", "128",
+                "--context_batch_size", "128",
+                "--momentum", "0.9",
+                "--model_name", "ResNet50-Pretrained",
+                "--method", "psmap",
+                "--reg_type", "group_dro_prior_exponential_sharpness_penalty_fixed_weights_context",
+                "--context_points", "xxx",
+                "--forward_points", "joint",
+                "--reg_points", "context",
+                "--ood_points", "xxx",
+                "--mc_samples_reg", "1",
+                "--reg_scale", "1",
+                "--prior_mean", "0",
+                "--weight_decay", "0",
+                "--log_frequency", "1",
+                "--log_frequency_steps", "50",
+                "--save_to_wandb", "True",
+                "--wandb_project", "xxx",
+                "--wandb_account", "xxx"
+            ]
+        }
+    ]
+}
